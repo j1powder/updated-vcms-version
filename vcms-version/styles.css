@@ -1,0 +1,137 @@
+#nav-logo{
+    width: 25%;
+    height: auto;
+    display: inline;
+}
+
+#banner{
+    background-image:url('images/maincover-gray.jpeg');
+    background-position: center;
+    background-size: cover;
+    min-height: 700px;
+    
+   
+    
+}
+#banner h1{
+    padding-top: 15%;
+}
+
+.banner-text{
+    color: white;
+    -webkit-text-stroke: black;
+    text-shadow: 1px 1px 1px black;
+    padding-top: 1rem;
+    
+    text-align: center;
+
+}
+
+#myfooter{
+    text-align: center;
+    margin-top: 2rem;
+    padding-top:2rem;
+    background-color: whitesmoke;
+    min-height: 100px;
+}
+
+#username{
+    width: 60%;
+    margin: 1rem;
+}
+#password{
+    width: 60%;
+    margin: 1rem;
+}
+
+.logreg-form{
+    margin: 3rem;
+    display: block;
+    background-color: #1189dd;
+    padding: 2rem;
+    border-radius: 5px;
+}
+.lbl-txt{
+    margin: 0 1rem;
+}
+
+#contactName{
+    width: 60%;
+    margin: 1rem;
+}
+#companyName{
+    width: 60%;
+    margin: 1rem;
+}
+#companyPhone{
+    width: 60%;
+    margin: 1rem;
+}
+#companyEmail{
+    width: 60%;
+    margin: 1rem;
+}
+
+.sub-btn{
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+}
+
+#firstname{
+    width: 60%;
+    margin: 1rem;
+}
+#lastname{
+    width: 60%;
+    margin: 1rem;
+}
+
+
+/*logged in styles */
+#scorecard{
+     border-radius: 5px;
+     box-shadow: 1px 1px 2px 2px black;
+     width: 80%;
+}
+
+.trows{
+    border: black 1px solid;
+    padding: 1rem;
+}
+.theads{
+    border: black 1px solid;
+    padding: 1rem 2rem;
+}
+
+.tdata{
+    border: black 1px solid;
+    padding: 1rem;
+
+}
+
+.qinput{
+    display: block;
+    margin-bottom: 1rem;;
+}
+
+.sidemen-item{
+    color: black;
+    padding: 1rem;
+    border: solid black 1px;
+    background-color: #1189dd !important;
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px 2px grey;
+    
+}
+
+.sidemen-item a{
+    text-decoration: none;
+    color: black;
+}
+
+#topname{
+    margin: 1rem;
+}
+
