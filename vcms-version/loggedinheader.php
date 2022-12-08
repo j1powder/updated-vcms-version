@@ -20,6 +20,7 @@ session_start();
 
 <!-- Latest compiled JavaScript -->
 <?php echo '<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>' ?>
+<?php echo "<script src='../index.js' defer></script>" ?>
 </head>
 <style>
 .sidemen-item{
@@ -67,7 +68,11 @@ session_start();
     </ul> */ ?>
     <ul class="nav navbar-nav navbar-right">
     
-      <li><a href="contractordash.php"><span class="glyphicon glyphicon-user"></span>Dashboard</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="contractordash.php"><span class="glyphicon glyphicon-user"></span>Dashboard <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><a href="userprofile.php">User Profile</a></li>
+      </ul>
+      </li>
       <li><a href="../logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
     </ul>
   </div>

@@ -1,5 +1,5 @@
 <footer id="myfooter">
-        <p>&copy;2022 | JJ Safety LLC</p>
+        <p>Copyright &copy; 2022 | VCMS - JJ Safety LLC</p>
     </footer>
 </body>
 </html>

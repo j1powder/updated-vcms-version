@@ -2,18 +2,31 @@
 include '../loggedinheader.php';
 receiveInsurance();
 ?>
+<style>
+#doc-form{
+	background-color: lightgrey;
+	padding: 2rem;
+	border-radius: 5px;
+	border: 1px solid grey;
+	box-shadow: 1px 1px 3px 3px grey;
+}
+
+</style>
 <div class="col-sm-9">
 
-<form action="documentcenter.php" method="post" enctype="multipart/form-data">
+<form id="doc-form" action="documentcenter.php" method="post" enctype="multipart/form-data">
 <div class="form-input py-2">
 <div class="form-group">
+<label>Name</label>
 <input type="text" class="form-control" name="name" placeholder="Enter your name" required>
 </div>
 <div class="form-group">
+<label>Upload Insurance</label>
+
 <input type="file" name="pdf_file"  accept=".pdf" title="Upload PDF"/>
 </div>
 <div class="form-group">
-<input type="submit" class="btnRegister" name="submit" value="Submit">
+<input type="submit" class="sub-btn" name="submit" value="Submit">
 </div>
 </div>
 </form>
@@ -49,7 +62,7 @@ receiveInsurance();
 				<tr>
 				<td><?php echo $result['doc_id']; ?> &nbsp;</td>
 				<td><?php echo $result['username']; ?> &nbsp;</td>
-				<td><?php echo $result['insurance']; ?></td>
+				<td><a href="PDF/<?php echo $result['insurance']; ?>" download><?php echo $result['insurance']; ?></a></td>
 				</tr>
 				<?php
 					}

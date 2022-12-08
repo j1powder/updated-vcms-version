@@ -21,6 +21,24 @@ session_start();
 <!-- Latest compiled JavaScript -->
 <?php echo '<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>' ?>
 </head>
+<style>
+  .admin-side-btn{
+    color: black;
+    padding: 1rem;
+    border: solid black 1px;
+    background-color: #1189dd !important;
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px 2px grey;
+    margin: 1rem 1rem 1rem 0;
+    height: 40px;
+    width: 100%; 
+}
+
+.admin-side-btn a{
+    text-decoration: none;
+    color: black;
+}
+</style>
 
 <body>
     <header>
@@ -52,5 +70,12 @@ session_start();
     <main>
         <div class="container">
             <div class="row">
-                <div class="col-sm-3"></div>
+               <div class="col-sm-2">
+       
+        <button class="admin-side-btn" ><a href="admindash.php">Home</a></button><br>
+        <button class="admin-side-btn" ><a href="admindocumentcenter.php">Document Center</a></button><br>
+        <button class="admin-side-btn" >Message Center</button>
+        
+        </div>
+                
             
