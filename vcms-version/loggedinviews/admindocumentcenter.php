@@ -51,10 +51,10 @@ padding: 10px;
 <?php } ?>
                     </ul>
 
-<?php /*
+<?php 
                 global $connection;
-
-					$selectQuery = "SELECT * FROM documents";
+				
+					$selectQuery = "SELECT * FROM documents INNER JOIN vcms_companies on documents.company_id = vcms_companies.company_id WHERE companyName = 'New York Giants'";
 					$squery = mysqli_query($connection, $selectQuery);
 					
 					while (($result = mysqli_fetch_assoc($squery))) { 
@@ -64,7 +64,7 @@ padding: 10px;
                 <p><?php echo $result['company_id']; ?></p>
                 <p><a href="PDF/<?php echo $result['insurance']; ?>" download><?php echo $result['insurance']; ?></a></p>
 
-                <?php } */?>
+                <?php } ?>
 </div>
 </div>
 </div>

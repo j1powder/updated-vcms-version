@@ -20,6 +20,7 @@ session_start();
 
 <!-- Latest compiled JavaScript -->
 <?php echo '<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>' ?>
+<?php echo "<script src='../index.js' defer></script>" ?>
 </head>
 <style>
   .admin-side-btn{
@@ -74,6 +75,7 @@ session_start();
        
         <button class="admin-side-btn" ><a href="admindash.php">Home</a></button><br>
         <button class="admin-side-btn" ><a href="admindocumentcenter.php">Document Center</a></button><br>
+        <button class="admin-side-btn" ><a href="adminscorecard.php">Scorecard</a></button><br>
         <button class="admin-side-btn" >Message Center</button>
         
         </div>

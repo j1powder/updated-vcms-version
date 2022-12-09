@@ -130,6 +130,7 @@ padding: 10px;
                         </select><br>
                         <button type="submit" name='submit'>Submit</button>
                     </form>
+                    <?php loopThruCompanies(); ?>
                     </div>
                 </div>
             </div>

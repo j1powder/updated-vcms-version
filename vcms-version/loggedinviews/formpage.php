@@ -22,6 +22,7 @@ createAnotherEntry();
     <label class="qlabel">What is your TRIR?</label><input class="qinput form-control" name="trir">
     <label class="qlabel">What is your EMR?</label><input class="qinput form-control" name="emr">
 
+
     
     <button type="submit" class="sub-btn" name="submit">Submit</button>
 </form>

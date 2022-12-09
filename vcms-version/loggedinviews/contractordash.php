@@ -58,8 +58,16 @@ include "../loggedinheader.php";
         <table id="scorecard">
         <tbody id="scorecard-bdy">
             <tr class="trows">
+<?php
+            global $connection;
+                    $company_name = $_SESSION['companyName'];
+                    $companyid = $_SESSION['company_id'];
+					$selectQuery = "SELECT * FROM vcms_scorecards WHERE companyName = '$company_name'";
+					$squery = mysqli_query($connection, $selectQuery);
+					while (($result = mysqli_fetch_assoc($squery))){ ?>
+
             <th class="theads">Safety Score: </th>
-            <td class="tdata">A Rated</td>
+            <td class="tdata"><?php echo $result['overall_score']; ?></p></td> <?php }?>
             </tr>
             <tr class="trows">
             <th class="theads">Current TRIR: </th>

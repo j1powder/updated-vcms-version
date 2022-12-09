@@ -298,11 +298,13 @@ function loopThruUserData() {
 <?php 
 function loopThruCompanies() {
 global $connection;
-$selectQuery = "SELECT companyName FROM vcms_companies";
+$selectQuery = "SELECT * FROM vcms_companies";
 $squery = mysqli_query($connection, $selectQuery);
 //$result = mysqli_fetch_assoc($squery);
 while (($result = mysqli_fetch_assoc($squery))) {
- echo implode(" ",$result) . " <br>"; 
+ 
+  echo "<option>" . $result['companyName'] . "</option>";
+  
                
 }
 }
@@ -325,5 +327,63 @@ if(isset($_POST['submit'])){
   $subject = $_POST['subject'];
   $body = $_POST['body'];
 }
+}
+?>
+
+<?php
+function generateScore() {
+  
+  global $connection;
+  // $selectQuery = "SELECT * FROM vcms_companies";
+  // $squery = mysqli_query($connection, $selectQuery);
+  // //$result = mysqli_fetch_assoc($squery);
+  // while (($result = mysqli_fetch_assoc($squery))) {
+   
+  //   echo "<option>" . $result['companyName'] . "</option>";
+    
+                 
+  // } 
+  
+  
+  
+  
+  if(isset($_POST['submit'])){
+      $companyname = $_POST['companyName'];
+      $acctmgr = $_POST['acctmgr_name'];
+      $sftyprgm = $_POST['safetyprogram'];
+      $insurance = $_POST['insurance_'];
+      $trainingproof = $_POST['proofof_training'];
+      $drugprogram = $_POST['drug_program'];
+      $osha10 = $_POST['osha_10_cards'];
+      $trir = $_POST['trir_acceptable'];
+      $emr = $_POST['emr_acceptable'];
+      $overallscore = $_POST['overall_score'];
+      //$companyid = $_POST['company_id']; 
+    
+      $companyname = mysqli_real_escape_string($connection, $companyname );
+      $acctmgr = mysqli_real_escape_string($connection, $acctmgr );
+      $sftyprgm = mysqli_real_escape_string($connection, $sftyprgm );
+      $insurance = mysqli_real_escape_string($connection, $insurance );
+      $trainingproof = mysqli_real_escape_string($connection, $trainingproof );
+      $drugprogram = mysqli_real_escape_string($connection, $drugprogram );
+      $osha10 = mysqli_real_escape_string($connection, $osha10 );
+      $trir = mysqli_real_escape_string($connection, $trir);
+      $emr = mysqli_real_escape_string($connection, $emr );
+      $overallscore = mysqli_real_escape_string($connection, $overallscore);
+      //$companyid = mysqli_real_escape_string($connection, $companyid);
+      
+
+      $query = "SELECT * FROM vcms_scorecards";
+      $query = "INSERT INTO vcms_scorecards(companyName, acctmgr_name, safetyprogram, insurance_, proofof_training, drug_program, osha_10_cards, trir_acceptable, emr_acceptable, overall_score)";
+      $query .="VALUES ('$companyname','$acctmgr', '$sftyprgm', '$insurance', '$trainingproof', '$drugprogram', '$osha10', '$trir', '$emr', '$overallscore')";
+      
+      $result = mysqli_query($connection, $query);
+      
+      if(!$result) {
+       die('Query Failed');
+        } else {
+          echo "record created";
+        }
+  }
 }
 ?>
