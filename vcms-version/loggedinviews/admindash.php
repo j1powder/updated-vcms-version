@@ -1,6 +1,5 @@
 <?php
 include "../loggedinadmin.php";
-
 ?>
 <style>
 #data-table, #data-row, .data-head, .data-data {
@@ -10,6 +9,8 @@ padding: 10px;
 </style>    
 
 <div class="col-sm-10">
+
+<h3>All Company Data</h3>
 
 <!-- <label>Company</label>
                         <select id="company">

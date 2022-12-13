@@ -1,6 +1,6 @@
+
 const Btn = document.getElementById('demo-data-btn');
 
-console.log("Yowzer");
 function showForm() {
     const demoForm = document.getElementById('demo-data-form');
     demoForm.style.display = "block";
@@ -16,9 +16,11 @@ function getValues() {
           }
         }
 
-      document.getElementById('overall-score').innerHTML = Math.round(totalCorrect * 100 / 7) + "%";
-    
+console.log(document.getElementById('overall-score').value = Math.round(totalCorrect * 100 / 7) + "%");
+     
+
     }
+
 
     
 

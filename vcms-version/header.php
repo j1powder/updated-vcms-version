@@ -21,7 +21,7 @@
     <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="index.php"><img id="nav-logo" src="images/VCMS-Cropped.png"> Home</a>
+      <a class="navbar-brand" href="index.php">YOUR LOGO - Home</a>
     </div>
     <?php /*<ul class="nav navbar-nav">
       <li style="text-align:left;" class="active"><a href="index.php">Home</a></li>

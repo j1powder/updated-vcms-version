@@ -12,6 +12,7 @@ padding: 10px;
 
 <h4>Welcome to the document center</h4>
 <br>
+<?php /*
 <table id="doc-table">
 <tr id="doc-row">
  <th class='data-head'>Company</th>
@@ -39,32 +40,38 @@ padding: 10px;
 
                     </table>
 
-<ul>
-<?php
+<select>
+					<?php
                  global $connection;
-					$selectQuery = "SELECT * FROM documents INNER JOIN vcms_companies on documents.company_id = vcms_companies.company_id";
+					$selectQuery = "SELECT * FROM vcms_companies";
 					$squery = mysqli_query($connection, $selectQuery);
 
 					while (($result = mysqli_fetch_assoc($squery))) {
+						$companyisname = $result['companyName'];
 				?>
-<li><b><?php echo $result['companyName']; ?></b></li>
-<?php } ?>
-                    </ul>
+
+<option name="companyinfo"><b><?php  echo $companyisname;  ?></b></option> <?php } ?>
+</select>
+*/?>
 
 <?php 
-                global $connection;
-				
-					$selectQuery = "SELECT * FROM documents INNER JOIN vcms_companies on documents.company_id = vcms_companies.company_id WHERE companyName = 'New York Giants'";
-					$squery = mysqli_query($connection, $selectQuery);
-					
-					while (($result = mysqli_fetch_assoc($squery))) { 
+global $connection;
 
-				?>
+$selectquery = "SELECT companyName, insurance FROM documents INNER JOIN vcms_companies on documents.company_id = vcms_companies.company_id";				
+$squery = mysqli_query($connection, $selectquery);
+while (($result = mysqli_fetch_assoc($squery))) {;
+?>
 
-                <p><?php echo $result['company_id']; ?></p>
-                <p><a href="PDF/<?php echo $result['insurance']; ?>" download><?php echo $result['insurance']; ?></a></p>
 
-                <?php } ?>
+<p><?php echo $result['companyName']; ?></p>
+
+<p><a href="pdf/<?php echo $result['insurance']; ?>" download> <?php echo   $result["insurance"] ; ?></a></p>
+<?php } ?>
+
+<?php displayDocuments(); ?>
+
+<p></p>
+
 </div>
 </div>
 </div>

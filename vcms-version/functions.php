@@ -265,10 +265,7 @@ function updateUserData() {
       
   $query = "SELECT * FROM vcms_users";
   $query = "UPDATE vcms_users SET address = '$address', city = '$city', state = '$state', zip = '$zip', phone = '$phone', email = '$email' WHERE username = '$user'";
-  
-  //$query = "INSERT INTO vcms_companies(legal_co_name, co_address)";
-  //$query .= "VALUES('$legalcompanyname','$companyaddress')";
-  
+    
   $result = mysqli_query($connection, $query);
   if(!$result) {
       die('query failed');
@@ -319,11 +316,11 @@ $msg = "First line of text\nSecond line of text";
 $msg = wordwrap($msg,70);
 
 // send email
-mail("j1powder@yahoo.com","My subject",$msg);
+mail("6233135230@tmomail.com","My subject",$msg);
 
 
 if(isset($_POST['submit'])){
-  $to = 'j1powder@yahoo.com';
+  $to = '6233135230@tmomail.com';
   $subject = $_POST['subject'];
   $body = $_POST['body'];
 }
@@ -332,21 +329,8 @@ if(isset($_POST['submit'])){
 
 <?php
 function generateScore() {
-  
   global $connection;
-  // $selectQuery = "SELECT * FROM vcms_companies";
-  // $squery = mysqli_query($connection, $selectQuery);
-  // //$result = mysqli_fetch_assoc($squery);
-  // while (($result = mysqli_fetch_assoc($squery))) {
-   
-  //   echo "<option>" . $result['companyName'] . "</option>";
-    
-                 
-  // } 
-  
-  
-  
-  
+
   if(isset($_POST['submit'])){
       $companyname = $_POST['companyName'];
       $acctmgr = $_POST['acctmgr_name'];
@@ -387,3 +371,58 @@ function generateScore() {
   }
 }
 ?>
+
+<?php
+function updateScore() {
+global $connection;
+  
+  if(isset($_POST['update'])){
+      $companyname = $_POST['companyName'];
+      $acctmgr = $_POST['acctmgr_name'];
+      $sftyprgm = $_POST['safetyprogram'];
+      $insurance = $_POST['insurance_'];
+      $trainingproof = $_POST['proofof_training'];
+      $drugprogram = $_POST['drug_program'];
+      $osha10 = $_POST['osha_10_cards'];
+      $trir = $_POST['trir_acceptable'];
+      $emr = $_POST['emr_acceptable'];
+      $overallscore = $_POST['overall_score'];
+    
+      $companyname = mysqli_real_escape_string($connection, $companyname );
+      $acctmgr = mysqli_real_escape_string($connection, $acctmgr );
+      $sftyprgm = mysqli_real_escape_string($connection, $sftyprgm );
+      $insurance = mysqli_real_escape_string($connection, $insurance );
+      $trainingproof = mysqli_real_escape_string($connection, $trainingproof );
+      $drugprogram = mysqli_real_escape_string($connection, $drugprogram );
+      $osha10 = mysqli_real_escape_string($connection, $osha10 );
+      $trir = mysqli_real_escape_string($connection, $trir);
+      $emr = mysqli_real_escape_string($connection, $emr );
+      $overallscore = mysqli_real_escape_string($connection, $overallscore);
+      
+
+      $query = "SELECT * FROM vcms_scorecards";
+      $query = "UPDATE vcms_scorecards SET companyName = '$companyname', acctmgr_name = '$acctmgr', safetyprogram = '$sftyprgm', insurance_ = '$insurance', proofof_training = '$trainingproof', drug_program = '$drugprogram', osha_10_cards = '$osha10', trir_acceptable = '$trir', emr_acceptable = '$emr', overall_score = '$overallscore' WHERE companyName = '$companyname'";
+      
+      $result = mysqli_query($connection, $query);
+      
+      if(!$result) {
+       die('Query Failed');
+        } else {
+          echo "record created";
+        }
+  }
+}
+?>
+<?php
+function displayDocuments(){
+  global $connection;
+
+  $selectquery = "SELECT companyName, insurance FROM documents INNER JOIN vcms_companies on documents.company_id = vcms_companies.company_id";				
+  $squery = mysqli_query($connection, $selectquery);
+  while(($result = mysqli_fetch_assoc($squery))); {
+  echo "<p>" . $result['companyName'] . "</p>";
+  }
+}
+?>
+
+

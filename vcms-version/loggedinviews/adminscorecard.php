@@ -3,11 +3,19 @@ include "../loggedinadmin.php";
 // if(isset($_POST['submit'])){
 //     echo "connected";
 // }
+updateScore();
 generateScore();
+
 ?>
 <style>
     .qlabel{
         display: block;
+    }
+    #score-submit{
+        display: inline;
+    }
+    #get-score{
+        margin-top: 2rem;
     }
 </style>
 <div class="col-sm-9">
@@ -53,14 +61,18 @@ generateScore();
     
 
     <label class="qlabel">Overall Score</label>
-    <h4 class='form-control' id="overall-score" ></h4>
-    <input  class="qinput form-control" name="overall_score" placeholder="!!copy the overall score into this field prior to submission!!" >
+    <input  class="qinput form-control" name="overall_score" id="overall-score" placeholder="!!copy the overall score into this field prior to submission!!" value="" >
 
+    <button id="score-submit" type="submit" name="submit">Submit Score</button>     <button id="score-update" name="update">Update Score</button> 
 
-    <button type="submit" name="submit">Submit Score</button>
-    </form>
+</form>
 
 <button id="get-score" onClick="getValues()">get score</button>
+
+
+   
+
+
 </div>
 </div>
 </div>
